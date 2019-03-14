@@ -61,7 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\cube_rotate.cs" />
     <Compile Include="Assets\jump.cs" />
+    <Compile Include="Assets\rotate.cs" />
+    <Compile Include="Assets\scale.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/구건모/Desktop/개발/GameInterface/Class1/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
