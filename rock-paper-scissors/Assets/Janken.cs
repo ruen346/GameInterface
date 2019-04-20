@@ -14,6 +14,7 @@ public class Janken : MonoBehaviour
     int modeJanken = 0;
     public AudioClip voice_janken_start;
     public AudioClip voice_janken_pon;
+    public AudioClip voice_janken_goo;
     public AudioClip voice_janken_choki;
     public AudioClip voice_janken_par;
     public AudioClip voice_janken_win;
@@ -58,32 +59,32 @@ public class Janken : MonoBehaviour
 
             case GOO:
                 animator.SetBool("Goo", true);
-                univoice.clip = voice_janken_start;
+                univoice.clip = voice_janken_goo;
                 break;
 
             case CHOKI:
                 animator.SetBool("Choki", true);
-                univoice.clip = voice_janken_start;
+                univoice.clip = voice_janken_choki;
                 break;
 
             case PAR:
                 animator.SetBool("Par", true);
-                univoice.clip = voice_janken_start;
+                univoice.clip = voice_janken_par;
                 break;
 
             case DRAW:
                 animator.SetBool("Aiko", true);
-                univoice.clip = voice_janken_start;
+                univoice.clip = voice_janken_draw;
                 break;
 
             case WIN:
                 animator.SetBool("Win", true);
-                univoice.clip = voice_janken_start;
+                univoice.clip = voice_janken_win;
                 break;
 
             case LOOSE:
                 animator.SetBool("Loose", true);
-                univoice.clip = voice_janken_start;
+                univoice.clip = voice_janken_loose;
                 break;
         }
         univoice.Play();
