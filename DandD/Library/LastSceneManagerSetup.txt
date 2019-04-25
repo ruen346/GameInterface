@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/drag&drop.unity
+  isLoaded: 1
+  isActive: 1
