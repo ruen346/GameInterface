@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Making/_Complete-Game.unity
+- path: Assets/Making/Start_scene.unity
   isLoaded: 1
   isActive: 1
