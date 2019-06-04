@@ -18,6 +18,8 @@ namespace Complete
         {
             enemy_num_text.text = enemy_num + " / 20";
             life_text.text = "Life : " + life;
+
+            FindObjectOfType<life>().view(life);
         }
 
         public static int get_life(){ return life; }

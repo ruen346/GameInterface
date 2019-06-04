@@ -63,11 +63,14 @@ namespace Complete
 
         private void SetHealthUI ()
         {
-            // Set the slider's value appropriately.
-            m_Slider.value = m_CurrentHealth;
+            if (type == 0)
+            {
+                // Set the slider's value appropriately.
+                m_Slider.value = m_CurrentHealth;
 
-            // Interpolate the color of the bar between the choosen colours based on the current percentage of the starting health.
-            m_FillImage.color = Color.Lerp (m_ZeroHealthColor, m_FullHealthColor, m_CurrentHealth / m_StartingHealth);
+                // Interpolate the color of the bar between the choosen colours based on the current percentage of the starting health.
+                m_FillImage.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, m_CurrentHealth / m_StartingHealth);
+            }
         }
 
 
@@ -111,6 +114,14 @@ namespace Complete
                 m_Dead = true;
                 GameManager.down_enemy();
                 FindObjectOfType<GameManager>().text_print();
+            }
+        }
+
+        private void Update()
+        {
+            if (type == 1)
+            {
+                FindObjectOfType<health>().check(m_CurrentHealth);
             }
         }
     }
