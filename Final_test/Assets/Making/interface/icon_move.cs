@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class icon_move : MonoBehaviour
 {
@@ -23,4 +25,14 @@ public class icon_move : MonoBehaviour
             transform.Translate(-move, move, 0, Space.World);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("ddddd");
+    }
+
+    void OnMouseOver()
+    {
+        Debug.Log("ddddd");
+    }   
 }

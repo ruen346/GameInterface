@@ -16,7 +16,7 @@ namespace Complete
 
         public void text_print()
         {
-            enemy_num_text.text = enemy_num + " / 20";
+            enemy_num_text.text = "X " + enemy_num;
             life_text.text = "Life : " + life;
 
             FindObjectOfType<life>().view(life);

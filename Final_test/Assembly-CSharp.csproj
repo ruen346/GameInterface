@@ -66,8 +66,10 @@
     <Compile Include="Assets\_Completed-Assets\Scripts\UI\UIDirectionControl.cs" />
     <Compile Include="Assets\Making\CameraControl.cs" />
     <Compile Include="Assets\Making\Enemy.cs" />
+    <Compile Include="Assets\Making\interface\appear.cs" />
     <Compile Include="Assets\Making\interface\bullet_manager.cs" />
     <Compile Include="Assets\Making\interface\bullet_view.cs" />
+    <Compile Include="Assets\Making\interface\camera.cs" />
     <Compile Include="Assets\Making\interface\health.cs" />
     <Compile Include="Assets\Making\interface\icon_move.cs" />
     <Compile Include="Assets\Making\interface\life.cs" />
