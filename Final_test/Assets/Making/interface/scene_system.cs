@@ -7,6 +7,7 @@ public class scene_system : MonoBehaviour
 {
     public void start_game()
     {
+        GetComponent<AudioSource>().Play();
         SceneManager.LoadScene("Game_scene");
     }
 

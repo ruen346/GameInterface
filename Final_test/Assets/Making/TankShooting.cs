@@ -83,7 +83,7 @@ namespace Complete
 
         private void Fire ()
         {
-            if (FindObjectOfType<bullet_manager>().get_bullet() > 1)
+            if (FindObjectOfType<bullet_manager>().get_bullet() > 0)
             {
                 FindObjectOfType<bullet_manager>().reduce_bullet();
                 bullet_view[] a = FindObjectsOfType<bullet_view>();
