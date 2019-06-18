@@ -14,10 +14,12 @@ namespace Complete
         static int enemy_num = 20;
         static int life = 4;
 
+        public static int end = 0; // 1 Áü 2 ½Â¸®
+
         public void text_print()
         {
             enemy_num_text.text = "X " + enemy_num;
-            life_text.text = "Life : " + life;
+            life_text.text = "X " + life;
 
             FindObjectOfType<life>().view(life);
         }
@@ -27,6 +29,8 @@ namespace Complete
         public static void down_life(){ life--; }
 
         public static void down_enemy(){ enemy_num--; }
+
+        public static int get_end() { return end; }
 
         void Start()
         {
@@ -39,10 +43,16 @@ namespace Complete
 
         void Update()
         {
-            if(life < 0)
+            if (life < 0)
+            {
                 resurt_text.text = "Lose";
+                end = 1;
+            }
             if (enemy_num == 0)
+            {
                 resurt_text.text = "Win";
+                end = 2;
+            }
 
             if(Input.GetKey(KeyCode.Space))
             {

@@ -66,6 +66,7 @@
     <Compile Include="Assets\_Completed-Assets\Scripts\UI\UIDirectionControl.cs" />
     <Compile Include="Assets\Making\CameraControl.cs" />
     <Compile Include="Assets\Making\Enemy.cs" />
+    <Compile Include="Assets\Making\happy.cs" />
     <Compile Include="Assets\Making\interface\appear.cs" />
     <Compile Include="Assets\Making\interface\bullet_manager.cs" />
     <Compile Include="Assets\Making\interface\bullet_view.cs" />
