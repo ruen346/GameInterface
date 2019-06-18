@@ -7,7 +7,16 @@ namespace Complete
 {
     public class GameManager : MonoBehaviour
     {
+        public AudioClip background_music;
+        public AudioClip lose_music;
+        public AudioClip win_music;
+
+        private AudioSource audioSource;
+
+
+        int a = -1;
         public Text enemy_num_text;
+        public Text enemy_num_text2;
         public Text life_text;
         public Text resurt_text;
 
@@ -19,6 +28,7 @@ namespace Complete
         public void text_print()
         {
             enemy_num_text.text = "X " + enemy_num;
+            enemy_num_text2.text = "X " + enemy_num;
             life_text.text = "X " + life;
 
             FindObjectOfType<life>().view(life);
@@ -34,8 +44,12 @@ namespace Complete
 
         void Start()
         {
+            audioSource = GetComponent<AudioSource>();
+
             enemy_num = 20;
-            life = 4;
+            life = 0;
+            a = -1;
+            end = 0;
 
             text_print();
             resurt_text.text = "";
@@ -43,21 +57,49 @@ namespace Complete
 
         void Update()
         {
-            if (life < 0)
+            if (life < 0 && end == 0)
             {
                 resurt_text.text = "Lose";
                 end = 1;
+                FindObjectOfType<happy>().get_end(end);
+                FindObjectOfType<dark>().dark_view();
+                FindObjectOfType<color>().enemy();
+
+                FindObjectOfType<Enemy>().no();
+
+                audioSource.clip = lose_music;
+                audioSource.Play();
+
+                a = 35;
             }
-            if (enemy_num == 0)
+            if (enemy_num == 0 && end == 0)
             {
                 resurt_text.text = "Win";
                 end = 2;
+                FindObjectOfType<happy>().get_end(end);
+                FindObjectOfType<dark>().dark_view();
+                FindObjectOfType<color>().character();
+
+                audioSource.clip = win_music;
+                audioSource.Play();
+
+                a = 35;
             }
 
             if(Input.GetKey(KeyCode.Space))
             {
                 if(life < 0 || enemy_num == 0)
                     SceneManager.LoadScene("_Complete-Game");
+            }
+
+            if(a > 0)
+            {
+                a--;
+            }
+            if(a == 0)
+            {
+                FindObjectOfType<fuck>().move();
+                a--;
             }
         }
     }

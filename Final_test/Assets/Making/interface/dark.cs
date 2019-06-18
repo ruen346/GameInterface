@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class happy : MonoBehaviour
+public class dark : MonoBehaviour
 {
+    SpriteRenderer spriteRenderer;
+    public Sprite sprite1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +17,11 @@ public class happy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FindObjectOfType<GameManager>().text_print();
+        
+    }
+
+    public void dark_view()
+    {
+        this.GetComponent<Image>().sprite = sprite1;
     }
 }

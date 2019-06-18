@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    int stop = 0;
+
     public int m_PlayerNumber = 0;              // Used to identify which tank belongs to which player.  This is set by this tank's manager.
     public float m_Speed = 12f;                 // How fast the tank moves forward and back.
     public float m_TurnSpeed = 180f;            // How fast the tank turns in degrees per second.
@@ -230,21 +232,29 @@ public class Enemy : MonoBehaviour
 
     private void Fire()
     {
-        // Set the fired flag so only Fire is only called once.
-        m_Fired = true;
+        if (stop == 0)
+        {
+            // Set the fired flag so only Fire is only called once.
+            m_Fired = true;
 
-        // Create an instance of the shell and store a reference to it's rigidbody.
-        Rigidbody shellInstance =
-            Instantiate(m_Shell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
+            // Create an instance of the shell and store a reference to it's rigidbody.
+            Rigidbody shellInstance =
+                Instantiate(m_Shell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
 
-        // Set the shell's velocity to the launch force in the fire position's forward direction.
-        shellInstance.velocity = m_CurrentLaunchForce * m_FireTransform.forward;
+            // Set the shell's velocity to the launch force in the fire position's forward direction.
+            shellInstance.velocity = m_CurrentLaunchForce * m_FireTransform.forward;
 
-        // Change the clip to the firing clip and play it.
-        m_ShootingAudio.clip = m_FireClip;
-        m_ShootingAudio.Play();
+            // Change the clip to the firing clip and play it.
+            m_ShootingAudio.clip = m_FireClip;
+            m_ShootingAudio.Play();
 
-        // Reset the launch force.  This is a precaution in case of missing button events.
-        m_CurrentLaunchForce = m_MinLaunchForce;
+            // Reset the launch force.  This is a precaution in case of missing button events.
+            m_CurrentLaunchForce = m_MinLaunchForce;
+        }
+    }
+
+    public void no()
+    {
+        stop = 1;
     }
 }

@@ -14,6 +14,12 @@ public class icon_move : MonoBehaviour
         check = true;
     }
 
+    private void Start()
+    {
+        count = 30;
+        check = false;
+    }
+
     // Update is called once per frame
     void Update()
     {

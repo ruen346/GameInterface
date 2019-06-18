@@ -5,6 +5,10 @@ namespace Complete
 {
     public class TankHealth : MonoBehaviour
     {
+        public static int end = 0;
+
+
+
         public float m_StartingHealth = 100f;               // The amount of health each tank starts with.
         public Slider m_Slider;                             // The slider to represent how much health the tank currently has.
         public Image m_FillImage;                           // The image component of the slider.
@@ -123,6 +127,14 @@ namespace Complete
             {
                 FindObjectOfType<health>().check(m_CurrentHealth);
             }
+
+            end = GameManager.get_end();
+
+        }
+
+        public static int get_end()
+        {
+            return end;
         }
     }
 }
