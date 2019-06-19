@@ -15,7 +15,7 @@ public class scene_system : MonoBehaviour
 
     public void end_game()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+       // UnityEditor.EditorApplication.isPlaying = false;
         //Application.OpenURL("http://google.com");
         Application.Quit();
     }
