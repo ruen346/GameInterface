@@ -10,7 +10,7 @@ public class Spawn : MonoBehaviour
     
     void Start()
     {
-        for (int i=0; i<20; i++)
+        for (int i=0; i<1; i++)
         {
             Instantiate(spawn_prefab, new Vector3(spawn_x[i], 0, spawn_z[i]), transform.rotation);
         }

@@ -20,8 +20,13 @@ public class happy : MonoBehaviour
             move = 1920;
             end = 0;
         }
+        if (end == 2)
+        {
+            move = 1920;
+            end = 0;
+        }
 
-        if(move > 0)
+        if (move > 0)
         {
             transform.Translate(1920 / 30, 0, 0);
             move -= 1920/30;

@@ -47,7 +47,7 @@ namespace Complete
             audioSource = GetComponent<AudioSource>();
 
             enemy_num = 20;
-            life = 0;
+            life = 4;
             a = -1;
             end = 0;
 
